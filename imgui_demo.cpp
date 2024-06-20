@@ -8523,7 +8523,10 @@ struct ExampleAppDocuments
         if (ImGui::MenuItem(buf, "Ctrl+S", false, doc->Open))
             doc->DoSave();
         if (ImGui::MenuItem("Rename...", "Ctrl+R", false, doc->Open))
+        {
             RenamingDoc = doc;
+            RenamingStarted = true;
+        }
         if (ImGui::MenuItem("Close", "Ctrl+W", false, doc->Open))
             CloseQueue.push_back(doc);
         ImGui::EndPopup();

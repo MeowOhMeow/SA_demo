@@ -12,6 +12,9 @@ examples/*/Debug/*
 examples/*/Release/*
 examples/*/x64/*
 
+## Visual Studio Code artifacts
+.vscode
+
 ## Visual Studio artifacts
 .vs
 ipch
