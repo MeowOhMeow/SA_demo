@@ -1,7 +1,5 @@
 # Windows Demo Video:
-<video width="1080" height="720" controls>
-  <source src="../res/windows_demo_video.mp4" type="video/mp4">
-</video>
+![](https://github.com/MeowOhMeow/SA_demo/assets/89769840/75d3ae37-e814-4a0b-b610-b4a9856e99b9)
 
 Dear ImGui
 =====
