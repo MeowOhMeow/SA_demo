@@ -46,7 +46,7 @@ ifeq ($(UNAME_S), Linux) #LINUX
 	CXXFLAGS += `pkg-config --cflags glfw3`
 	CFLAGS = $(CXXFLAGS)
 	RM = rm -f
-	EXE = SA_Demo
+	EXE = SA_demo
 endif
 
 ifeq ($(UNAME_S), Darwin) #APPLE
@@ -59,7 +59,7 @@ ifeq ($(UNAME_S), Darwin) #APPLE
 	CXXFLAGS += -I/usr/local/include -I/opt/local/include -I/opt/homebrew/include
 	CFLAGS = $(CXXFLAGS)
 	RM = rm -f
-	EXE = SA_Demo
+	EXE = SA_demo
 endif
 
 ifeq ($(OS), Windows_NT)
@@ -70,7 +70,7 @@ ifeq ($(OS), Windows_NT)
 	CXXFLAGS += $(shell pkg-config --cflags glfw3)
 	CFLAGS = $(CXXFLAGS)
 	RM = del /Q
-	EXE = SA_Demo.exe
+	EXE = SA_demo.exe
 endif
 
 ##---------------------------------------------------------------------
