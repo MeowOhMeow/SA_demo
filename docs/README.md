@@ -1,3 +1,8 @@
+# Windows Demo Video:
+<video width="1080" height="720" controls>
+  <source src="../res/windows_demo_video.mp4" type="video/mp4">
+</video>
+
 Dear ImGui
 =====
 
