@@ -11,6 +11,9 @@
 #include "imgui_impl_glfw.h"
 #include "imgui_impl_opengl3.h"
 #include <stdio.h>
+#include <thread>
+#include <chrono>
+#include <iostream>
 #define GL_SILENCE_DEPRECATION
 #if defined(IMGUI_IMPL_OPENGL_ES2)
 #include <GLES2/gl2.h>
@@ -110,6 +113,9 @@ int main(int, char**)
     bool show_demo_window = true;
     bool show_another_window = false;
     ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
+    float targetFrameRate = 60.0f;
+    auto targetDuration = std::chrono::milliseconds(int(1e3 / targetFrameRate));
+    auto lastFrameTime = std::chrono::high_resolution_clock::now();
 
     // Main loop
 #ifdef __EMSCRIPTEN__
@@ -121,6 +127,8 @@ int main(int, char**)
     while (!glfwWindowShouldClose(window))
 #endif
     {
+        lastFrameTime = std::chrono::high_resolution_clock::now();
+
         // Poll and handle events (inputs, window resize, etc.)
         // You can read the io.WantCaptureMouse, io.WantCaptureKeyboard flags to tell if dear imgui wants to use your inputs.
         // - When io.WantCaptureMouse is true, do not dispatch mouse input data to your main application, or clear/overwrite your copy of the mouse data.
@@ -145,7 +153,7 @@ int main(int, char**)
             ImGui::Begin("Hello, world!");                          // Create a window called "Hello, world!" and append into it.
 
             ImGui::Text("This is some useful text.");               // Display some text (you can use a format strings too)
-            ImGui::Checkbox("Demo Window", &show_demo_window);      // Edit bools storing our window open/close state
+            ImGui::Checkbox("Show Lib Demo Window", &show_demo_window);      // Edit bools storing our window open/close state
             ImGui::Checkbox("Another Window", &show_another_window);
 
             ImGui::SliderFloat("float", &f, 0.0f, 1.0f);            // Edit 1 float using a slider from 0.0f to 1.0f
@@ -180,6 +188,13 @@ int main(int, char**)
         ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 
         glfwSwapBuffers(window);
+
+        // Sleep to maintain target frame rate
+        auto frameDuration = std::chrono::high_resolution_clock::now() - lastFrameTime;
+        auto sleepDuration = targetDuration - frameDuration;
+        if (sleepDuration > std::chrono::milliseconds(0)) {
+            std::this_thread::sleep_for(sleepDuration);
+        }
     }
 #ifdef __EMSCRIPTEN__
     EMSCRIPTEN_MAINLOOP_END;
