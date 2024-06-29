@@ -1,5 +1,5 @@
 # Windows Demo Video:
-![](https://github.com/MeowOhMeow/SA_demo/assets/89769840/75d3ae37-e814-4a0b-b610-b4a9856e99b9)
+[Demo](https://github.com/MeowOhMeow/SA_demo/assets/89769840/75d3ae37-e814-4a0b-b610-b4a9856e99b9)
 
 Dear ImGui
 =====
