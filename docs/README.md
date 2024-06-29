@@ -1,5 +1,6 @@
-# Windows Demo Video:
-[Demo](https://github.com/MeowOhMeow/SA_demo/assets/89769840/75d3ae37-e814-4a0b-b610-b4a9856e99b9)
+# Demo Videos:
+[Ubuntu Demo](https://github.com/MeowOhMeow/SA_demo/assets/89769840/48d74d1d-a6e1-41fc-b187-5be3aa33e5b9)
+[Windows Demo](https://github.com/MeowOhMeow/SA_demo/assets/89769840/75d3ae37-e814-4a0b-b610-b4a9856e99b9)
 
 Dear ImGui
 =====
