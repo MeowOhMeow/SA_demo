@@ -1,3 +1,6 @@
+# Installation
+- See [INSTALL.md](./INSTALL.md) for instructions on how to install Dear ImGui.
+
 # Demo Videos:
 [Ubuntu Demo](https://github.com/MeowOhMeow/SA_demo/assets/89769840/48d74d1d-a6e1-41fc-b187-5be3aa33e5b9)
 
