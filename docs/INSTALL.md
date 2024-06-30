@@ -19,6 +19,7 @@
   ```bash
   sudo apt-get update
   sudo apt-get install build-essential make libglfw3-dev libglm-dev
+  sudo apt-get install gnuplot-x11
   ```
 
 # Building
